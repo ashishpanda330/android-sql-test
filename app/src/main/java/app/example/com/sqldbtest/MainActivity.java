@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     String name;
@@ -43,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         StudentsModel model = new StudentsModel();
-                        model.setId(1);
+                        Random rand = new Random();
+                        model.setId(rand.nextInt(100000));
                         model.setName(name);
                         model.setRollNo(rollNo);
                         model.setClg(clg);
